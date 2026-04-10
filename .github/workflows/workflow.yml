@@ -4,8 +4,13 @@ on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  build_site:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -31,17 +36,3 @@ jobs:
           path: build
 
       - uses: actions/deploy-pages@v4
-
-  deploy:
-    needs: build_site
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
