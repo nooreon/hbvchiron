@@ -5,6 +5,7 @@
 
     import {Header, Sponsors, Footer} from "$lib";
     import achterwand from "$lib/assets/achterwand.webp";
+    import Blazoenen from "$lib/components/Blazoen.svelte";
 
     let {children} = $props();
 </script>
@@ -17,13 +18,16 @@
 
 <ModeWatcher/>
 
-<div class="flex flex-col min-h-screen">
-    <div class="relative z-10">
+
+<div class="page-wrapper flex flex-col min-h-screen">
+
+    <div class="relative z-20 border-b">
         <Header/>
     </div>
 
     <!-- Banner -->
-    <div class="relative h-80 overflow-hidden">
+    <!--
+    <div class="relative z-10 h-80 overflow-hidden">
         <img src={achterwand} alt="HBV Chiron"
              class="absolute inset-0 w-full h-full object-cover brightness-70"/>
         <div class="absolute inset-x-0 top-0 h-8 bg-linear-to-b from-black/60 to-transparent"></div>
@@ -35,13 +39,25 @@
             </p>
         </div>
     </div>
+    -->
 
-    <main class="flex-1">
+    <Blazoenen />
+
+    <main class="relative z-10 flex-1 content-center">
         {@render children()}
     </main>
 
-    <div class="mt-8">
+    <div class="relative z-10 mt-8">
         <Sponsors/>
+        <Footer/>
     </div>
-    <Footer/>
+
 </div>
+
+
+<style>
+    .page-wrapper {
+        position: relative;
+        overflow: hidden;
+    }
+</style>
