@@ -100,14 +100,6 @@
     padding-inline: 1rem;
 }
 
-.section:first-of-type {
-    padding-top: 2rem;
-}
-
-.section:last-of-type {
-    padding-bottom: 4rem;
-}
-
 .section-inner {
     max-width: 75ch;
 

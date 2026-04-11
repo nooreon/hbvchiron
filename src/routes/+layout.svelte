@@ -40,6 +40,8 @@
         {@render children()}
     </main>
 
-    <Sponsors/>
+    <div class="mt-8">
+        <Sponsors/>
+    </div>
     <Footer/>
 </div>
