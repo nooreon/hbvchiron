@@ -83,7 +83,7 @@
             <div class="mt-2 border-t pt-2">
                 <p class="px-3 py-1 text-xs uppercase tracking-widest text-muted-foreground">Documenten</p>
                 <a class="px-3 py-2 rounded-md block hover:bg-accent hover:text-primary"
-                   href="{base}/documenten/Privacyverklaring.pdf"
+                   href="{base}/documenten/Statuten.pdf"
                    target="_blank"
                    rel="noopener noreferrer">Statuten</a>
                 <a class="px-3 py-2 rounded-md block hover:bg-accent hover:text-primary"
