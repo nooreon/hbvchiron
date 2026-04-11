@@ -81,7 +81,10 @@
             <NavigationMenuContent class="right-0 left-auto z-1">
                 <ul class="grid text-nowrap gap-4 p-2 uppercase tracking-widest">
                     <li>
-                        <NavigationMenuLink class="hover:text-primary" href="##">Statuten</NavigationMenuLink>
+                        <NavigationMenuLink class="hover:text-primary"
+                                            href="/documenten/Statuten.pdf"
+                                            target="_blank"
+                                            rel="noopener noreferrer">Statuten</NavigationMenuLink>
                     </li>
                     <li>
                         <NavigationMenuLink class="hover:text-primary"
@@ -89,7 +92,10 @@
                         </NavigationMenuLink>
                     </li>
                     <li>
-                        <NavigationMenuLink class="hover:text-primary" href="##">Privacyverklaring
+                        <NavigationMenuLink class="hover:text-primary"
+                                            href="/documenten/Privacyverklaring.pdf"
+                                            target="_blank"
+                                            rel="noopener noreferrer">Privacyverklaring
                         </NavigationMenuLink>
                     </li>
                 </ul>

@@ -6,6 +6,7 @@
     import {page} from '$app/state';
 
     import ThemeToggle from "$lib/components/ThemeToggle.svelte";
+    import {NavigationMenuLink} from "$lib/components/ui/navigation-menu";
 
     let sheetOpen = $state(false);
 
@@ -81,10 +82,16 @@
 
             <div class="mt-2 border-t pt-2">
                 <p class="px-3 py-1 text-xs uppercase tracking-widest text-muted-foreground">Documenten</p>
-                <a class="px-3 py-2 rounded-md block hover:bg-accent hover:text-primary" href="##">Statuten</a>
+                <a class="px-3 py-2 rounded-md block hover:bg-accent hover:text-primary"
+                   href="/documenten/Statuten.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer">Statuten</a>
                 <a class="px-3 py-2 rounded-md block hover:bg-accent hover:text-primary"
                    href={resolve('/huishoudelijk-reglement')}>Huishoudelijk reglement</a>
-                <a class="px-3 py-2 rounded-md block hover:bg-accent hover:text-primary" href="##">Privacyverklaring</a>
+                <a class="px-3 py-2 rounded-md block hover:bg-accent hover:text-primary"
+                   href="/documenten/Privacyverklaring.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer">Privacyverklaring</a>
             </div>
 
             <div class="mt-auto border-t pt-4 px-3 flex items-center justify-between">
