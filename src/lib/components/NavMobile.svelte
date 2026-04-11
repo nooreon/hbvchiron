@@ -28,9 +28,12 @@
         const dx = e.changedTouches[0].clientX - touchStartX;
         const dy = e.changedTouches[0].clientY - touchStartY;
         if (Math.abs(dx) < Math.abs(dy)) return;
-        if (dx > 60) sheetOpen = false;
+        if (dx < -60 && !sheetOpen) sheetOpen = true;
+        if (dx > 60 && sheetOpen) sheetOpen = false;
     }
 </script>
+
+<svelte:window ontouchstart={onTouchStart} ontouchend={onTouchEnd} />
 
 <Sheet bind:open={sheetOpen}>
     <!-- Button -->
