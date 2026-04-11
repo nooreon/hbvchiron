@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {resolve} from '$app/paths';
+    import {base, resolve} from '$app/paths';
     import {
         NavigationMenuContent,
         NavigationMenuItem,
@@ -82,7 +82,7 @@
                 <ul class="grid text-nowrap gap-4 p-2 uppercase tracking-widest">
                     <li>
                         <NavigationMenuLink class="hover:text-primary"
-                                            href="/documenten/Statuten.pdf"
+                                            href="{base}/documenten/Statuten.pdf"
                                             target="_blank"
                                             rel="noopener noreferrer">Statuten</NavigationMenuLink>
                     </li>
@@ -93,7 +93,7 @@
                     </li>
                     <li>
                         <NavigationMenuLink class="hover:text-primary"
-                                            href="/documenten/Privacyverklaring.pdf"
+                                            href="{base}/documenten/Privacyverklaring.pdf"
                                             target="_blank"
                                             rel="noopener noreferrer">Privacyverklaring
                         </NavigationMenuLink>
