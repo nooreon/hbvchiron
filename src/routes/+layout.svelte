@@ -26,7 +26,6 @@
     </div>
 
     <!-- Banner -->
-    <!--
     <div class="relative z-10 h-80 overflow-hidden">
         <img src={achterwand} alt="HBV Chiron"
              class="absolute inset-0 w-full h-full object-cover brightness-70"/>
@@ -39,7 +38,6 @@
             </p>
         </div>
     </div>
-    -->
 
     <Blazoenen />
 
@@ -53,7 +51,6 @@
     </div>
 
 </div>
-
 
 <style>
     .page-wrapper {
