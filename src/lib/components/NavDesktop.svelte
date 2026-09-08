@@ -18,7 +18,7 @@
             </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-            <NavigationMenuTrigger class="uppercase tracking-widest hover:text-primary">
+            <NavigationMenuTrigger onclick={(e) => e.preventDefault()} class="uppercase tracking-widest hover:text-primary">
                 Over ons
             </NavigationMenuTrigger>
             <NavigationMenuContent class="right-0 left-auto z-1">
@@ -42,7 +42,7 @@
             </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-            <NavigationMenuTrigger class="uppercase tracking-widest hover:text-primary">
+            <NavigationMenuTrigger onclick={(e) => e.preventDefault()} class="uppercase tracking-widest hover:text-primary">
                 Meedoen
             </NavigationMenuTrigger>
             <NavigationMenuContent class="right-0 left-auto z-1">
@@ -75,7 +75,7 @@
             </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-            <NavigationMenuTrigger class="uppercase tracking-widest hover:text-primary">
+            <NavigationMenuTrigger onclick={(e) => e.preventDefault()} class="uppercase tracking-widest hover:text-primary">
                 Documenten
             </NavigationMenuTrigger>
             <NavigationMenuContent class="right-0 left-auto z-1">
