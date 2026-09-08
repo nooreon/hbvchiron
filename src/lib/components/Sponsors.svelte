@@ -1,10 +1,14 @@
 <script lang="ts">
-    import PBK from '$lib/assets/sponsoren/PBK-Logo.png'
-    import DBS from '$lib/assets/sponsoren/DBS-Logo.png'
+    import PijlEnBoogKopenLogo from '$lib/assets/sponsoren/PBK-Logo.png'
+    import DutchBowStoreLogo from '$lib/assets/sponsoren/DBS-Logo.png'
+    import DecathlonLogo from '$lib/assets/sponsoren/Decathlon-Logo.svg'
+    import VriendenLoterijLogo from '$lib/assets/sponsoren/VriendenLoterij_Logo.png'
 
     const sponsors = [
-        {naam: "PijlenBoogKopen", logo: PBK, url: "https://www.pijlenboogkopen.com/"},
-        {name: "DutchBowStore", logo: DBS, url: "https://www.dutchbowstore.com/"}
+        {naam: "PijlenBoogKopen", logo: PijlEnBoogKopenLogo, url: "https://www.pijlenboogkopen.com/"},
+        {naam: "DutchBowStore", logo: DutchBowStoreLogo, url: "https://www.dutchbowstore.com/"},
+        {naam: "DecathlonNL", logo: DecathlonLogo, url: "https://www.decathlon.nl"},
+        {naam: "VriendenLoterij", logo: VriendenLoterijLogo, url: "https://www.vriendenloterij.nl/"},
     ];
 </script>
 
@@ -21,7 +25,7 @@
                rel="noopener noreferrer"
                aria-label={sponsor.naam}
                class="opacity-80 hover:opacity-100 transition-opacity duration-200">
-                <img src={sponsor.logo} alt={sponsor.naam} class="h-20 w-auto max-w-50 object-contain"/>
+                <img src={sponsor.logo} alt={sponsor.naam} class="h-auto max-h-20 w-auto max-w-full object-contain" />
             </a>
         {/each}
     </div>
