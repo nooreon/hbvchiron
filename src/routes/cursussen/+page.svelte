@@ -7,7 +7,7 @@
     <div class="section-inner">
         <h2>Kennismakingscursus</h2>
         <p>
-            De kennismakingscursus wordt gegeven op de <strong>maandagavond van 19.00-21.00</strong>. Hij bestaat uit
+            De kennismakingscursus wordt gegeven op <strong>maandagavond van 19.00-21.00</strong>. Hij bestaat uit
             <strong>5 avonden</strong> waarin het basisschot wordt uitgelegd en je mag kijken of het boogschieten wat
             voor jou is. Je hoeft er nog geen materiaal voor aan te schaffen, dat hebben wij voor je te leen.
         </p>
@@ -19,11 +19,14 @@
             <strong>persoonlijke aandacht</strong> aan je kunnen geven.
         </p>
         <p>
+            Wil je meedoen? Neem <a href={resolve('/contact')} class="text-primary hover:underline">contact</a> met ons op, dan plannen wij je in bij de volgende cursus.
+        <p>
             Vond je de cursus zo leuk dat je graag wil blijven schieten? Dan kun je na afloop van de cursus natuurlijk
             <a href={resolve('/lidmaatschap')} class="text-primary hover:underline">lid worden</a> van onze vereniging.
         </p>
         <div class="flex gap-4 mt-6">
-            <Button href={resolve('/lidmaatschap')}>Lid worden</Button>
+            <Button href={resolve('/contact')}>Contact opnemen</Button>
+            <Button href={resolve('/lidmaatschap')} variant="outline">Lid worden</Button>
         </div>
     </div>
 </section>
