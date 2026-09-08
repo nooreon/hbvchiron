@@ -22,7 +22,7 @@
         {id: 5, title: "Sportmarkt 4 Mijl van Assen", date: "Zaterdag 19 september · 10:00-17:00", location: "Assen, Marsdijk", type: "evenement"},
         {id: 6, title: "Open dag i.v.m. Nationale Sportweek", date: "Zaterdag 26 september · 10:00-17:00", location: "Assen, Marsdijk", type: "evenement"},
         {id: 7, title: "Open dag", date: "Zaterdag 3 oktober", location: "Finsterwolde", type: "evenement"},
-        {id: 8, title: "Kennismakingscursus", date: "Maandag 20 oktober · 19:00-21:00", type: "cursus"},
+        {id: 8, title: "Start kennismakingscursus", date: "Maandag 5 oktober · 19:00-21:00", type: "cursus"},
     ];
 
     const badgeVariant: Record<Event["type"], "default" | "secondary" | "outline"> = {
