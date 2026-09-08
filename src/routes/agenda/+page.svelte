@@ -15,11 +15,14 @@
     };
 
     const events: Event[] = [
-        {id: 1, title: "Open dag", date: "Zaterdag 11 Apr · 10:00", location: "de Spreng", type: "evenement"},
-        {id: 2, title: "Kennismakingscursus", date: "Maandag 13 April · 19:00", type: "cursus"},
-        {id: 3, title: "Wedstrijd", date: "Zondag 19 April · 10:30", location: "de Spreng", type: "wedstrijd"},
-        {id: 4, title: "Kennismakingscursus", date: "Maandag 20 Apr · 19:00", type: "cursus"},
-        {id: 5, title: "Wedstrijd", date: "Zondag 17 Mei · 10:30", location: "Emmen", type: "wedstrijd"},
+        {id: 1, title: "Beweegmarkt", date: "Zaterdag 5 september · 12:00-17:00", location: "Smilde", type: "evenement"},
+        {id: 2, title: "Wijkfeest Assen-Oost", date: "Zaterdag 12 september · 11:00-16:00", location: "Assen Oost", type: "evenement"},
+        {id: 3, title: "Club BBQ", date: "Zaterdag 12 september · 17:00", type: "evenement"},
+        {id: 4, title: "Beweegmarkt", date: "Vrijdag 18 september · 14:00-17:00", location: "Beilen", type: "evenement"},
+        {id: 5, title: "Sportmarkt 4 Mijl van Assen", date: "Zaterdag 19 september · 10:00-17:00", location: "Assen, Marsdijk", type: "evenement"},
+        {id: 6, title: "Open dag i.v.m. Nationale Sportweek", date: "Zaterdag 26 september · 10:00-17:00", location: "Assen, Marsdijk", type: "evenement"},
+        {id: 7, title: "Open dag", date: "Zaterdag 3 oktober", location: "Finsterwolde", type: "evenement"},
+        {id: 8, title: "Kennismakingscursus", date: "Maandag 20 oktober · 19:00-21:00", type: "cursus"},
     ];
 
     const badgeVariant: Record<Event["type"], "default" | "secondary" | "outline"> = {
@@ -28,23 +31,19 @@
         cursus: "outline",
     };
 
-    const tabs = ["all", "cursus", "wedstrijd", "evenement"] as const;
+    const tabs = ["alle", "cursus", "wedstrijd", "evenement"] as const;
     type Tab = typeof tabs[number];
 
-    let activeTab: Tab = $state("all");
+    let activeTab: Tab = $state("alle");
 
     const filtered = $derived(
-        activeTab === "all" ? events : events.filter((e) => e.type === activeTab)
+        activeTab === "alle" ? events : events.filter((e) => e.type === activeTab)
     );
 </script>
 
 <div class="section">
     <div class="section-inner">
         <h2>Agenda</h2>
-        <p>
-            Let op: Onderstaande data dient alleen nog ter illustratie
-        </p>
-
         <Tabs bind:value={activeTab}>
             <TabsList>
                 {#each tabs as tab (tab)}
@@ -74,9 +73,11 @@
                                     <span>{event.location ? event.location : "de Spreng"}</span>
                                 </div>
                             </CardContent>
+                            <!--
                             <CardFooter>
                                 <Button variant="outline" size="sm">details</Button>
                             </CardFooter>
+                            -->
                         </Card>
                     {/each}
 
