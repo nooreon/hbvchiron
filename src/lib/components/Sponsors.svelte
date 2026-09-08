@@ -25,7 +25,7 @@
                rel="noopener noreferrer"
                aria-label={sponsor.naam}
                class="opacity-80 hover:opacity-100 transition-opacity duration-200">
-                <img src={sponsor.logo} alt={sponsor.naam} class="h-auto max-h-20 w-auto max-w-full object-contain" />
+                <img src={sponsor.logo} alt={sponsor.naam} class="h-auto max-h-20 w-auto max-w-50 object-contain" />
             </a>
         {/each}
     </div>
