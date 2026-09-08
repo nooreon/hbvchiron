@@ -23,6 +23,7 @@
         {id: 6, title: "Open dag i.v.m. Nationale Sportweek", date: "Zaterdag 26 september · 10:00-12:00", type: "evenement"},
         {id: 7, title: "Open dag", date: "Zaterdag 3 oktober", location: "Finsterwolde", type: "evenement"},
         {id: 8, title: "Start kennismakingscursus", date: "Maandag 5 oktober · 19:00-21:00", type: "cursus"},
+        {id: 9, title: "Wedstrijd", date: "Woensdag 11 oktober", type: "wedstrijd"},
     ];
 
     const badgeVariant: Record<Event["type"], "default" | "secondary" | "outline"> = {
