@@ -51,9 +51,10 @@
                   ontouchstart={onTouchStart}
                   ontouchend={onTouchEnd}>
         <nav class="flex flex-col gap-1 mt-12 uppercase tracking-widest flex-1 overflow-y-auto px-4 pb-4">
+            <!-- Home -->
             <a class="px-3 py-2 rounded-md block hover:bg-accent hover:text-primary"
                href={resolve('/')}>Home</a>
-
+            <!-- Over ons -->
             <div class="mt-2 border-t py-2">
                 <p class="px-3 py-1 text-xs uppercase tracking-widest text-muted-foreground">Over ons</p>
                 <a class="px-3 py-2 rounded-md block hover:bg-accent hover:text-primary"
@@ -63,7 +64,7 @@
                 <a class="px-3 py-2 rounded-md block hover:bg-accent hover:text-primary"
                    href={resolve('/over-ons#bestuur')}>Bestuur</a>
             </div>
-
+            <!-- Lidmaatschap en Cursussen -->
             <div class="mt-2 border-t border-b py-2">
                 <p class="px-3 py-1 text-xs uppercase tracking-widest text-muted-foreground">Meedoen</p>
                 <a class="px-3 py-2 rounded-md block hover:bg-accent hover:text-primary"
@@ -71,16 +72,12 @@
                 <a class="px-3 py-2 rounded-md block hover:bg-accent hover:text-primary"
                    href={resolve('/cursussen')}>Cursussen</a>
             </div>
-
+            <!-- Agenda -->
             <a class="px-3 py-2 rounded-md block hover:bg-accent hover:text-primary"
                href={resolve('/agenda')}>Agenda</a>
-            <a class="px-3 py-2 rounded-md block hover:bg-accent hover:text-primary"
-               href={resolve('/sponsors')}>Sponsors</a>
-            <a class="px-3 py-2 rounded-md block hover:bg-accent hover:text-primary"
-               href={resolve('/contact')}>Contact</a>
-
+            <!-- Documenten -->
             <!-- eslint-disable svelte/no-navigation-without-resolve -->
-            <div class="mt-2 border-t pt-2">
+            <div class="mt-2 border-t pt-2 border-b py-2">
                 <p class="px-3 py-1 text-xs uppercase tracking-widest text-muted-foreground">Documenten</p>
                 <a class="px-3 py-2 rounded-md block hover:bg-accent hover:text-primary"
                    href="{base}/documenten/Statuten.pdf"
@@ -93,7 +90,13 @@
                    target="_blank"
                    rel="noopener noreferrer">Privacyverklaring</a>
             </div>
-
+            <!-- Sponsors -->
+            <a class="px-3 py-2 rounded-md block hover:bg-accent hover:text-primary"
+               href={resolve('/sponsors')}>Sponsors</a>
+            <!-- Contact -->
+            <a class="px-3 py-2 rounded-md block hover:bg-accent hover:text-primary"
+               href={resolve('/contact')}>Contact</a>
+            <!-- Weergave -->
             <div class="mt-auto border-t pt-4 px-3 flex items-center justify-between">
                 <span class="uppercase tracking-widest text-muted-foreground">Weergave</span>
                 <ThemeToggle/>

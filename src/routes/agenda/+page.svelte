@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { agendaItems, type AgendaItem } from "$lib/data/agenda-items";
     import {Badge} from "$lib/components/ui/badge/index.js";
     import {Button} from "$lib/components/ui/button/index.js";
     import CalendarIcon from "@lucide/svelte/icons/calendar";
@@ -6,27 +7,33 @@
     import {Tabs, TabsContent, TabsList, TabsTrigger} from "$lib/components/ui/tabs";
     import {Card, CardContent, CardFooter, CardHeader, CardTitle} from "$lib/components/ui/card";
 
-    type Event = {
-        id: number;
-        title: string;
-        date: string;
-        location?: string;
-        type: "cursus" | "wedstrijd" | "evenement";
-    };
+    const DEFAULT_LOCATION = "HBV Chiron";
 
-    const events: Event[] = [
-        {id: 1, title: "Beweegmarkt", date: "Zaterdag 5 september · 12:00-17:00", location: "Smilde", type: "evenement"},
-        {id: 2, title: "Wijkfeest Assen-Oost", date: "Zaterdag 12 september · 11:00-16:00", location: "Assen Oost", type: "evenement"},
-        {id: 3, title: "Club BBQ", date: "Zaterdag 12 september · 17:00", type: "evenement"},
-        {id: 4, title: "Beweegmarkt", date: "Vrijdag 18 september · 14:00-17:00", location: "Beilen", type: "evenement"},
-        {id: 5, title: "Sportmarkt 4 Mijl van Assen", date: "Zaterdag 19 september · 11:00-18:00", location: "Assen, Marsdijk", type: "evenement"},
-        {id: 6, title: "Open dag i.v.m. Nationale Sportweek", date: "Zaterdag 26 september · 10:00-12:00", type: "evenement"},
-        {id: 7, title: "Open dag", date: "Zaterdag 3 oktober · 10:00-12:30", location: "De Hardenberg 5 · Finsterwolde", type: "evenement"},
-        {id: 8, title: "Start kennismakingscursus", date: "Maandag 5 oktober · 19:00-21:00", type: "cursus"},
-        {id: 9, title: "Wedstrijd", date: "Woensdag 11 oktober", type: "wedstrijd"},
-    ];
+    const weekdayMonthFormatter = new Intl.DateTimeFormat("nl-NL", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+    });
 
-    const badgeVariant: Record<Event["type"], "default" | "secondary" | "outline"> = {
+    export function formatAgendaDate(item: AgendaItem): string {
+        const date = new Date(item.datum + "T00:00:00");
+
+        if (Number.isNaN(date.getTime())) {
+            console.warn(`Ongeldige datum voor agenda item "${item.titel}": "${item.datum}"`);
+            return item.datum;
+        }
+
+        const datum = weekdayMonthFormatter.format(date);
+        const tijd = item.eindtijd ? `${item.begintijd}-${item.eindtijd}` : item.begintijd;
+        return tijd ? `${datum} · ${tijd}` : datum;
+    }
+
+    function getMapsUrl(event: AgendaItem): string | undefined {
+        if (event.mapsUrl) return event.mapsUrl;
+        return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.locatie ? event.locatie : DEFAULT_LOCATION)}`;
+    }
+
+    const badgeVariant: Record<AgendaItem["type"], "default" | "secondary" | "outline"> = {
         wedstrijd: "default",
         evenement: "secondary",
         cursus: "outline",
@@ -38,7 +45,7 @@
     let activeTab: Tab = $state("alle");
 
     const filtered = $derived(
-        activeTab === "alle" ? events : events.filter((e) => e.type === activeTab)
+        activeTab === "alle" ? agendaItems : agendaItems.filter((e) => e.type === activeTab)
     );
 </script>
 
@@ -54,24 +61,36 @@
             <h3 class="text-center">2026</h3>
             <TabsContent value={activeTab}>
                 <div class="grid gap-4 sm:grid-cols-2">
-                    {#each filtered as event (event.id)}
-                        <Card class="shadow-md">
+                    {#each filtered as item (item.id)}
+                        <Card id="event-{item.id}" class="shadow-md scroll-mt-20">
                             <CardHeader>
                                 <div class="flex items-start justify-between gap-2">
-                                    <CardTitle class="text-base">{event.title}</CardTitle>
-                                    <Badge variant={badgeVariant[event.type]} class="capitalize shrink-0">
-                                        {event.type}
+                                    <CardTitle class="text-base">{item.titel}</CardTitle>
+                                    <Badge variant={badgeVariant[item.type]} class="capitalize shrink-0">
+                                        {item.type}
                                     </Badge>
                                 </div>
                             </CardHeader>
+
                             <CardContent class="text-sm text-muted-foreground space-y-1">
+                                <!-- Datum -->
                                 <div class="flex items-center gap-2">
-                                    <CalendarIcon class="size-4"/>
-                                    <span>{event.date}</span>
+                                    <CalendarIcon class="size-4 text-muted-foreground/70 shrink-0"/>
+                                    <span class="first-letter:uppercase">{formatAgendaDate(item)}</span>
                                 </div>
+                                <!-- Locatie -->
                                 <div class="flex items-center gap-2">
-                                    <MapPinIcon class="size-4"/>
-                                    <span>{event.location ? event.location : "de Spreng"}</span>
+                                    <MapPinIcon class="size-4 text-muted-foreground/70 shrink-0"/>
+                                    <!-- eslint-disable svelte/no-navigation-without-resolve -->
+                                    <a
+                                            href={getMapsUrl(item)}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="underline underline-offset-2 hover:text-foreground"
+                                            title="Open locatie in Google Maps"
+                                    >
+                                        {item.locatie ? item.locatie : DEFAULT_LOCATION}
+                                    </a>
                                 </div>
                             </CardContent>
                             <!--
