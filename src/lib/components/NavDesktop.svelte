@@ -12,11 +12,13 @@
 
 <NavigationMenuRoot viewport={false} class="flex items-center gap-2 min-w-0">
     <NavigationMenuList class="flex flex-wrap justify-center uppercase tracking-widest min-w-0">
+        <!-- Home -->
         <NavigationMenuItem>
             <NavigationMenuLink class="hover:bg-accent hover:text-primary" href={resolve('/')}>
                 Home
             </NavigationMenuLink>
         </NavigationMenuItem>
+        <!-- Over ons -->
         <NavigationMenuItem>
             <NavigationMenuTrigger onclick={(e) => e.preventDefault()} class="uppercase tracking-widest hover:text-primary">
                 Over ons
@@ -41,6 +43,7 @@
                 </ul>
             </NavigationMenuContent>
         </NavigationMenuItem>
+        <!-- Lidmaatschap en Cursussen -->
         <NavigationMenuItem>
             <NavigationMenuTrigger onclick={(e) => e.preventDefault()} class="uppercase tracking-widest hover:text-primary">
                 Meedoen
@@ -59,21 +62,13 @@
                 </ul>
             </NavigationMenuContent>
         </NavigationMenuItem>
+        <!-- Agenda -->
         <NavigationMenuItem>
             <NavigationMenuLink class="hover:bg-accent hover:text-primary" href={resolve('/agenda')}>
                 Agenda
             </NavigationMenuLink>
         </NavigationMenuItem>
-        <NavigationMenuItem>
-            <NavigationMenuLink class="hover:bg-accent hover:text-primary" href={resolve('/sponsors')}>
-                Sponsors
-            </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-            <NavigationMenuLink class="hover:bg-accent hover:text-primary" href={resolve('/contact')}>
-                Contact
-            </NavigationMenuLink>
-        </NavigationMenuItem>
+        <!-- Documenten -->
         <NavigationMenuItem>
             <NavigationMenuTrigger onclick={(e) => e.preventDefault()} class="uppercase tracking-widest hover:text-primary">
                 Documenten
@@ -100,6 +95,18 @@
                     </li>
                 </ul>
             </NavigationMenuContent>
+        </NavigationMenuItem>
+        <!-- Sponsors -->
+        <NavigationMenuItem>
+            <NavigationMenuLink class="hover:bg-accent hover:text-primary" href={resolve('/sponsors')}>
+                Sponsors
+            </NavigationMenuLink>
+        </NavigationMenuItem>
+        <!-- Contact -->
+        <NavigationMenuItem>
+            <NavigationMenuLink class="hover:bg-accent hover:text-primary" href={resolve('/contact')}>
+                Contact
+            </NavigationMenuLink>
         </NavigationMenuItem>
     </NavigationMenuList>
 </NavigationMenuRoot>
