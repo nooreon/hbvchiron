@@ -56,7 +56,11 @@
                         </NavigationMenuLink>
                     </li>
                     <li>
-                        <NavigationMenuLink class="hover:text-primary" href={resolve('/cursussen')}>Cursussen
+                        <NavigationMenuLink class="hover:text-primary" href={resolve('/cursussen#kennismakingscursus')}>Kennismakingscursus
+                        </NavigationMenuLink>
+                    </li>
+                    <li>
+                        <NavigationMenuLink class="hover:text-primary" href={resolve('/cursussen#clinics')}>Clinics en Bedrijfsuitjes
                         </NavigationMenuLink>
                     </li>
                 </ul>

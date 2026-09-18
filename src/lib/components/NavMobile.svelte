@@ -70,7 +70,9 @@
                 <a class="px-3 py-2 rounded-md block hover:bg-accent hover:text-primary"
                    href={resolve('/lidmaatschap')}>Lidmaatschap</a>
                 <a class="px-3 py-2 rounded-md block hover:bg-accent hover:text-primary"
-                   href={resolve('/cursussen')}>Cursussen</a>
+                   href={resolve('/cursussen#kennismakingscursus')}>Kennismakingscursus</a>
+                <a class="px-3 py-2 rounded-md block hover:bg-accent hover:text-primary"
+                   href={resolve('/cursussen#clinics')}>Clinics en Bedrijfsuitjes</a>
             </div>
             <!-- Agenda -->
             <a class="px-3 py-2 rounded-md block hover:bg-accent hover:text-primary"
