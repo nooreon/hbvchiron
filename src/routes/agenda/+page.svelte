@@ -34,9 +34,15 @@
     }
 
     const badgeVariant: Record<AgendaItem["type"], "default" | "secondary" | "outline"> = {
-        wedstrijd: "default",
-        evenement: "secondary",
-        cursus: "outline",
+        cursus: "default",
+        wedstrijd: "secondary",
+        evenement: "outline",
+    };
+
+    const cardStyles: Record<AgendaItem["type"], string> = {
+        cursus: "border-l-4 border-l-primary bg-primary/5",
+        wedstrijd: "border-l-4 border-l-amber-500/50",
+        evenement: "border-l-4 border-l-transparent",
     };
 
     const tabs = ["alle", "cursus", "wedstrijd", "evenement"] as const;
@@ -62,7 +68,7 @@
             <TabsContent value={activeTab}>
                 <div class="grid gap-4 sm:grid-cols-2">
                     {#each filtered as item (item.id)}
-                        <Card id="event-{item.id}" class="shadow-md scroll-mt-20">
+                        <Card id="event-{item.id}" class="shadow-md scroll-mt-20 {cardStyles[item.type]}">
                             <CardHeader>
                                 <div class="flex items-start justify-between gap-2">
                                     <CardTitle class="text-base">{item.titel}</CardTitle>
@@ -92,6 +98,13 @@
                                         {item.locatie ? item.locatie : DEFAULT_LOCATION}
                                     </a>
                                 </div>
+
+                                {#if item.type === 'cursus'}
+                                    <a href="/cursussen#kennismakingscursus"
+                                       class="mt-2 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
+                                        Meer info &amp; aanmelden
+                                    </a>
+                                {/if}
                             </CardContent>
                             <!--
                             <CardFooter>
