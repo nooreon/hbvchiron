@@ -1,14 +1,14 @@
 <script lang="ts">
-    import PijlEnBoogKopenLogo from '$lib/assets/sponsoren/PBK-Logo.png'
-    import DutchBowStoreLogo from '$lib/assets/sponsoren/DBS-Logo.png'
-    import DecathlonLogo from '$lib/assets/sponsoren/Decathlon-Logo.svg'
-    import VriendenLoterijLogo from '$lib/assets/sponsoren/VriendenLoterij_Logo.png'
+    import DecathlonLogo from '$lib/assets/sponsors/DecathlonLogo.svg'
+    import VriendenLoterijLogo from '$lib/assets/sponsors/VriendenLoterijLogo.png'
+    import NotarissenLogo from '$lib/assets/sponsors/NotarissenLogo.png'
+    import FysiotherapieKloosterveenLogo from '$lib/assets/sponsors/FysiotherapieKloosterveenLogo.png'
 
     const sponsors = [
-        {naam: "PijlenBoogKopen", logo: PijlEnBoogKopenLogo, url: "https://www.pijlenboogkopen.com/"},
-        {naam: "DutchBowStore", logo: DutchBowStoreLogo, url: "https://www.dutchbowstore.com/"},
-        {naam: "DecathlonNL", logo: DecathlonLogo, url: "https://www.decathlon.nl"},
-        {naam: "VriendenLoterij", logo: VriendenLoterijLogo, url: "https://www.vriendenloterij.nl/"},
+        {naam: "DecathlonNL", logo: DecathlonLogo, url: "https://www.decathlon.nl", schaal: 0.85},
+        {naam: "VriendenLoterij", logo: VriendenLoterijLogo, url: "https://www.vriendenloterij.nl/", schaal: 0.9},
+        {naam: "TijdhofDaverschotDeJongPosthumusNotarissen", logo: NotarissenLogo, url: "https://www.notariskantoor.nu/", schaal: 1.0},
+        {naam: "FysiotherapieKloosterveen", logo: FysiotherapieKloosterveenLogo, url: "https://fysiotherapiekloosterveen.nl/", schaal: 1.0},
     ];
 </script>
 
