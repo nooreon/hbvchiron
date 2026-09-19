@@ -27,7 +27,7 @@
         <p>
             Lidmaatschap van deze organisaties betekent onder andere toegang tot activiteiten zoals
             <strong>regiocompetities</strong>, <strong>kampioenschappen</strong>
-            en <strong>wedstrijden</strong>.
+            en <strong>fun wedstrijden</strong>.
         </p>
         <p>
             Voor meer informatie over het lidmaatschap
