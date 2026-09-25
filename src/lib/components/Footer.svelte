@@ -56,7 +56,7 @@
 
             <div class="flex items-center gap-2.5">
                 <Mail class="w-4 h-4 shrink-0 text-muted-foreground" />
-                <a href="mailto:info@hbvchiron.nl" class="text-sm text-primary hover:underline">info@hbvchiron.nl</a>
+                <a href="mailto:hbvchiron@gmail.com" class="text-sm text-primary hover:underline">info@hbvchiron.nl</a>
             </div>
         </div>
     </div>
