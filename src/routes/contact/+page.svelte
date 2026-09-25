@@ -13,7 +13,7 @@
         <ul class="list-none pl-4 border-l-2 border-primary mb-4 space-y-1">
             <li class="flex items-center gap-2">
                 <Mail class="h-4 w-4 shrink-0 opacity-80"/>
-                <a href="mailto:hbvchiron@gmail.com" class="text-primary hover:underline">info@hbvchiron.nl</a>
+                <a href="mailto:hbvchiron@gmail.com" class="text-primary hover:underline">hbvchiron@gmail.com</a>
             </li>
             <li class="flex items-center gap-2">
                 <Phone class="h-4 w-4 shrink-0 opacity-80"/>
