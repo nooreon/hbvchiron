@@ -5,7 +5,7 @@
         {dag: 'Vrijdag', tijd: '19:00 – 20:30'},
         {
             dag: 'Zaterdag',
-            type: 'Prikkelarme schietavond',
+            type: 'Prikkelarme avond (op aanmelding)',
             tijd: '19:30 – 21:00',
             opmerking: 'Speciaal voor mensen die last hebben van prikkels of serieus willen trainen.'
         },
